@@ -1,49 +1,46 @@
-//keep in mind that this IS NOT the code that we will actually be using in teh robot!
-
-package org.firstinspires.ftc.teamcode;
+package com.qualcomm.ftcrobotcontroller.Robotics15_16;
 
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;//this allows you to use opmodes
 import com.qualcomm.robotcore.hardware.DcMotor;//this allows you to use motors
 import com.qualcomm.robotcore.hardware.Servo;//this allows you to use servos should you need them
 import com.qualcomm.robotcore.util.Range;//this allows you to establish a range for the motors(so
 // they don't move too far)
+
 /**
- * Created by ppg02 on 12/1/2016.
- */
+* Created by Noelle on 11/19/2015.
+*/
+public class RemoteFormat extends OpMode { //make sure that you remember to extend OpMode!
 
-public class example_robot {
-    //make sure that you remember to extend OpMode!
-
-    //here is where you set things like limits. To do so, follow this:
-    final static double EX_LIMIT = 0;
+//here is where you set things like limits. To do so, follow this:
+final static double EX_LIMIT = 0;
 
 //here is where you tell the robot what motors it has. to do so, follow this:
 
-    DcMotor ExMotor;
-    DcMotor ExMotor2;
+DcMotor ExMotor;
+DcMotor ExMotor2;
 //this works for things like servos too, just replae DcMotor with whatever device goes by the
 // assigned name
 
-    public void init() {//this is the setup period, where the robot prepares itself to start playing
+public void init() {//this is the setup period, where the robot prepares itself to start playing
 
 //here is where you will tell the robot which motor is which(they correspond to specific
 // ports) Follow this:
 
-        ExMotor = hardwareMap.dcMotor.get("motor_1");
-        ExMotor2 = hardwareMap.dcMotor.get("motor_2"); //don't forget the semicolon(;)!
+ExMotor = hardwareMap.dcMotor.get("motor_1");
+ExMotor2 = hardwareMap.dcMotor.get("motor_2"); //don't forget the semicolon(;)!
 
 //when establishing motors like wheels, remember to reverse a motor. Follow this:
-        ExMotor2.setDirection(DcMotor.Direction.REVERSE);
+ExMotor2.setDirection(DcMotor.Direction.REVERSE);
 
-    }
+}
 
-    public void loop() {
+public void loop() {
 
 //________________________USING JOYSTICKS___________________________________________________
 //here, you tell the phone what each joystick button means.
 //For example, to say that the left joystick controlls a specific motor, follow this:
 
-        float left = -gamepad1.left_stick_y;
+float left = -gamepad1.left_stick_y;
 /*
 Wonder why there is a negative sign before gamepad1?
 This is beause when you push the joystick all the wayforeard,
@@ -59,12 +56,12 @@ This way, it avoids all sorts of cunfusion! (*^▽^*)
 */
 
 //to assign, the right joystick, replace left with right, like this:
-        float right = -gamepad1.right_stick_y;
+float right = -gamepad1.right_stick_y;
 //just replace "left" with "right"!
 
 //We need to assign a cutoff point so that the motors don't overextend themselves. Like so:
-        right = Range.clip(right, -1,1);
-        left = Range.clip(left, -1,1);
+right = Range.clip(right, -1,1);
+left = Range.clip(left, -1,1);
 
 
 
@@ -81,27 +78,25 @@ This way, it avoids all sorts of cunfusion! (*^▽^*)
 
 
 //here is where the phone actually tells the motors to move. Follow this:
-        ExMotor.setPower(right);
-        ExMotor2.setPower(left);
+ExMotor.setPower(right);
+ExMotor2.setPower(left);
 //__________________________________________________________________________________________
 
-/*
+
 //______________________________USING BUTTONS_______________________________________________
 
 //Say you want the robot to do something when the a button is pressed. Do this:
-        if (gamepad1.a){
+if (gamepad1.a){
 //put whatever you want the robot to do in here. For example, I put one of the motors to
 // a neutral position.
 
-            ExMotor = 0;
-        }
+ExMotor = 0;
+}
 
 //If you wanna use other buttons, replace "a" with whatever button you would like to use.
 
 //__________________________________________________________________________________________
-    }
-    */
-
+}
 /*
 * This method scales the joystick input so for low joystick values, the
 * scaled value is less than linear.  This is to make it easier to drive
@@ -140,3 +135,8 @@ dScale = scaleArray[index];
 return dScale;
 }*/
 }
+
+//Aaaaaaaaaand your robot (should) be able to drive! Remember to delete any unused likes of CODE.
+//Try to refrain from deleting the comments, it makes things a lot easier to read and understand.
+
+//Good luck on your programming endeavours! ヽ〳 ՞ ᗜ ՞ 〵ง
