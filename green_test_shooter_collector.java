@@ -16,19 +16,20 @@ import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 
 public class green_test_shooter_collector extends OpMode {
 
-    final static double SPEED = 0; //this must be between -1 and 1!
+    final static double SPEED = .5; //this must be between -1 and 1!
 
     //establish motors
     DcMotor collectRight;
     DcMotor collectLeft;
 
-    DcMotor ShooterLeft;
-    DcMotor ShooterRight;
+    DcMotor Shooter;
 
     public void init(){
         //hardware mapping
         collectRight = hardwareMap.dcMotor.get("collect left");
         collectLeft = hardwareMap.dcMotor.get("collect right"); //don't forget the semicolon(;)!
+
+        Shooter = hardwareMap.dcMotor.get("shooter");
     }
     public void loop(){
         if (gamepad2.a) {//as long as the a button is pressed...
@@ -38,8 +39,7 @@ public class green_test_shooter_collector extends OpMode {
         }
 
         if (gamepad2.b) {//if b is pressed...
-            ShooterLeft.setPower(SPEED);
-            ShooterRight.setPower(SPEED);
+            Shooter.setPower(SPEED);
             //spin shooter motors
         }
     }

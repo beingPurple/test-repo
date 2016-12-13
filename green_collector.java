@@ -2,7 +2,6 @@ package org.firstinspires.ftc.teamcode;
 
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.hardware.DcMotor;
-import com.qualcomm.robotcore.util.Range;
 
 /**
  * Created by Noelle on 11/19/2015.
@@ -17,6 +16,10 @@ public class green_collector extends OpMode {
     public void init() {
         collectRight = hardwareMap.dcMotor.get("collect left");
         collectLeft = hardwareMap.dcMotor.get("collect right"); //don't forget the semicolon(;)!
+        ShooterLeft = hardwareMap.dcMotor.get("shoot left");
+        ShooterRight = hardwareMap.dcMotor.get("shoot right");
+
+        ShooterRight.setDirection(DcMotor.Direction.REVERSE);
     }
 
     public void loop() {

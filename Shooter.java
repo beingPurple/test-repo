@@ -10,22 +10,16 @@ public class Shooter extends OpMode {
 
     final static double SPEED = 0.75; //must be between -1 and 1
 
-    DcMotor ShooterLeft;
-    DcMotor ShooterRight;
+    DcMotor Shooter;
 
     public void init() {
-
-        ShooterLeft = hardwareMap.dcMotor.get("shoot left");
-        ShooterRight = hardwareMap.dcMotor.get("shoot right");
-
-        ShooterRight.setDirection(DcMotor.Direction.REVERSE);
+        Shooter = hardwareMap.dcMotor.get("shooter");
     }
 
     public void() {
 
         if (gamepad2.b) {
-            ShooterLeft.setPower(SPEED);
-            ShooterRight.setPower(-SPEED);
+            Shooter.setPower(SPEED);
         }
     }
 }
