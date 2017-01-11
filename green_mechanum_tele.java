@@ -20,10 +20,10 @@ public class green_mechanum_tele extends OpMode { //make sure that you remember 
 
     //establish motors
     DcMotor collectUp;
-    DcMotor collectDown;
+
 
     DcMotor Shooter;
-    final static double SPEED = .5; //this must be between -1 and 1!
+
     final static double STOP = 0;
 
     public void init() {
@@ -35,9 +35,10 @@ public class green_mechanum_tele extends OpMode { //make sure that you remember 
 
 
         collectUp = hardwareMap.dcMotor.get("co up");
-        collectDown = hardwareMap.dcMotor.get("co do"); //don't forget the semicolon(;)!
+
 
         Shooter = hardwareMap.dcMotor.get("shoot");
+        //hardware setup
     }
 
     public void loop() {
@@ -136,7 +137,6 @@ public class green_mechanum_tele extends OpMode { //make sure that you remember 
         RB.setPower(RightB);
 
         collectUp.setPower(colu);
-        collectDown.setPower(cold);
         Shooter.setPower(shoot);
 
     }
