@@ -48,9 +48,8 @@ public class green_mechanum_tele extends OpMode { //make sure that you remember 
         double RightF = 0;
         double LeftB = 0;
         double RightB = 0;
-        double speed = .5;
+        double speed;
         double colu = 0;
-        double cold = 0;
         double shoot = 0;
 
         float x = gamepad1.left_stick_x;
@@ -92,7 +91,7 @@ public class green_mechanum_tele extends OpMode { //make sure that you remember 
         }
 
         //set bumpers to turn the robot
-
+//code in testing, not tested yet. likely needs  a boolean added to bumber pieces
         if(gamepad1.left_bumper){//turn left
             LeftF=speed;
             RightF=speed;
@@ -108,23 +107,21 @@ public class green_mechanum_tele extends OpMode { //make sure that you remember 
             RightB=-speed;
 
         }
-
-        if (gamepad2.a == true) {//as long as the a button is pressed...
-            cold = speed;
+//code in testing. this area not tested yet. an equal mark was deleted from inside each function
+        if (gamepad2.a = true) {//as long as the a button is pressed...
             colu = speed;
             //spin the collector motors
         }
-        if (gamepad2.a == false) {//as long as the a button is pressed...
-            cold = STOP;
+        if (gamepad2.a = false) {//as long as the a button is pressed...
             colu = STOP;
             //spin the collector motors
         }
 
-        if (gamepad2.b == true) {//if b is pressed...
+        if (gamepad2.b = true) {//if b is pressed...
             shoot = speed;
             //spin shooter motors
         }
-        if (gamepad2.b == false) {//if b is pressed...
+        if (gamepad2.b = false) {//if b is pressed...
            shoot = STOP;
             //spin shooter motors
         }
