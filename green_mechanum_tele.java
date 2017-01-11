@@ -38,7 +38,6 @@ public class green_mechanum_tele extends OpMode { //make sure that you remember 
 
 
         Shooter = hardwareMap.dcMotor.get("shoot");
-        //hardware setup
     }
 
     public void loop() {
