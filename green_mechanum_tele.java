@@ -48,15 +48,15 @@ public class green_mechanum_tele extends OpMode { //make sure that you remember 
         double RightF = 0;
         double LeftB = 0;
         double RightB = 0;
-        double speed;
+        double speed = .5;
         double colu = 0;
         double shoot = 0;
 
-        float x = gamepad1.left_stick_x;
-        float y = gamepad1.left_stick_y;
+        double x = gamepad1.left_stick_x;
+        double y = gamepad1.left_stick_y;
 
         //speed is average of abs. value of x and y values
-        speed = Math.abs(x) + Math.abs(y);
+        //speed = Math.abs(x) + Math.abs(y);
 
         //forward(top left corner)
         if ((x <= 0) && (y <= 0)) {
@@ -64,10 +64,11 @@ public class green_mechanum_tele extends OpMode { //make sure that you remember 
             RightF = speed;
             LeftB = -speed;
             RightB = speed;
+
         }
 
         //left
-        if (x >= 0 && y>=0) {
+        else if (x >= 0 && y>=0) {
             LeftF = -speed;
             RightF = -speed;
             LeftB = speed;
@@ -75,7 +76,7 @@ public class green_mechanum_tele extends OpMode { //make sure that you remember 
         }
 
         //right
-        if(x<=0 && y<=0){
+        else if(x<=0 && y<=0){
             LeftF = speed;
             RightF = speed;
             LeftB = -speed;
@@ -83,7 +84,7 @@ public class green_mechanum_tele extends OpMode { //make sure that you remember 
         }
 
         //back
-        if ( x>=0 && y<=0){
+        else if ( x>=0 && y<=0){
             LeftF=speed;
             RightF=-speed;
             LeftB=speed;
@@ -100,7 +101,7 @@ public class green_mechanum_tele extends OpMode { //make sure that you remember 
 
         }
 
-        if(gamepad1.right_bumper){//turn right
+        else if(gamepad1.right_bumper){//turn right
             LeftF=-speed;
             RightF=-speed;
             LeftB=-speed;
@@ -112,16 +113,16 @@ public class green_mechanum_tele extends OpMode { //make sure that you remember 
             colu = speed;
             //spin the collector motors
         }
-        if (gamepad2.a = false) {//as long as the a button is pressed...
+        else if (gamepad2.a = false) {//as long as the a button is pressed...
             colu = STOP;
             //spin the collector motors
         }
 
-        if (gamepad2.b = true) {//if b is pressed...
+        else if (gamepad2.b = true) {//if b is pressed...
             shoot = speed;
             //spin shooter motors
         }
-        if (gamepad2.b = false) {//if b is pressed...
+        else if (gamepad2.b = false) {//if b is pressed...
            shoot = STOP;
             //spin shooter motors
         }
@@ -131,6 +132,11 @@ public class green_mechanum_tele extends OpMode { //make sure that you remember 
         RF.setPower(RightF);
         LB.setPower(LeftB);
         RB.setPower(RightB);
+
+        telemetry.addData("left front", LeftF);
+        telemetry.addData("right front",RightF);
+        telemetry.addData("left back",LeftB);
+        telemetry.addData("right back", RightB);
 
         collectUp.setPower(colu);
         Shooter.setPower(shoot);
