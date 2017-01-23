@@ -20,25 +20,25 @@ double x=gamepad1.left_stick_x;
         double y=gamepad1.left_stick_y;
 
 //forward
-        if((-0.3<x<0 && 0<x<0.3)&&(y >= 0.3)){
+        if((-0.3<x && x<0.3)&&(y >= 0.3)){
         //move forward
         }
 
 //backward
-        if((-0.3<x<0 && 0<x<0.3)&&(y <= -0.3)){
+        if((-0.3<x && x<0.3)&&(y <= -0.3)){
         //move backward
         }
 
 //strafe left
-        if(( x <= -0.3)&&( -0.3 <y<0 && 0<y< 0.3 )){
+        if(( x <= -0.3)&&(-0.3 < y && y < 0.3)){
         //move left
         }
 //strafe right
-        if(( x >= 0.3 )&&( -0.3 <y<0 && 0<y< 0.3 )){
+        if(( x >= 0.3 )&&(-0.3 < y && y < 0.3)){
         //move right
         }
 
 //brakes
-        if( x==0 && y==0){
+        if( (-0.3<x && x<0.3) && (-0.3 < y ** y < 0.3))){
         //stop
         }
