@@ -103,18 +103,18 @@ public class green_mechanum_tele extends OpMode { //make sure that you remember 
         //strafe left
         if ((x <= -0.3) && (-0.3 < y && y< 0.3)) {
             //move left
-            LeftF = speed;
-            LeftB = -speed;
-            RightF = -speed;
-            RightB = speed;
-        }
-        //strafe right
-        if ((x >= 0.3) && (-0.3 < y && y < 0.3)) {
-            //move right
             LeftF = -speed;
             LeftB = speed;
             RightF = speed;
             RightB = -speed;
+        }
+        //strafe right
+        if ((x >= 0.3) && (-0.3 < y && y < 0.3)) {
+            //move right
+            LeftF = speed;
+            LeftB = -speed;
+            RightF = -speed;
+            RightB = speed;
         }
 
         //brakes
@@ -123,6 +123,35 @@ public class green_mechanum_tele extends OpMode { //make sure that you remember 
             LeftF = STOP;
             LeftB = STOP;
             RightF = STOP;
+            RightB = STOP;
+        }
+
+        //NE
+        if( x> 0.3 && y >0){
+            LeftF = speed;
+            LeftB = STOP;
+            RightF = STOP;
+            RightB = speed;
+        }
+        //SE
+        if(x>0.3 && y<0){
+            LeftF = STOP;
+            LeftB = speed;
+            RightF = speed;
+            RightB = STOP;
+        }
+        //SW
+        if(x<-0.3 && y <0){
+            LeftF = -speed;
+            LeftB = STOP;
+            RightF = STOP;
+            RightB = -speed;
+        }
+        //NW
+        if(x<-0.3 && y>0){
+            LeftF = STOP;
+            LeftB = -speed;
+            RightF = -speed;
             RightB = STOP;
         }
         //8 directions------------------------------------------------------------------------------
