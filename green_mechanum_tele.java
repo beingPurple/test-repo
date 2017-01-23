@@ -69,7 +69,7 @@ public class green_mechanum_tele extends OpMode { //make sure that you remember 
         }
 
         //left
-        if (x >= 0 && y>=0) {
+        else if (x >= 0 && y>=0) {
             LeftF = -speed;
             RightF = -speed;
             LeftB = speed;
@@ -77,7 +77,7 @@ public class green_mechanum_tele extends OpMode { //make sure that you remember 
         }
 
         //right
-        if(x<=0 && y<=0){
+        else if(x<=0 && y<=0){
             LeftF = speed;
             RightF = speed;
             LeftB = -speed;
@@ -85,7 +85,7 @@ public class green_mechanum_tele extends OpMode { //make sure that you remember 
         }
 
         //back
-        if ( x>=0 && y<=0){
+        else if ( x>=0 && y<=0){
             LeftF=speed;
             RightF=-speed;
             LeftB=speed;
@@ -112,6 +112,7 @@ public class green_mechanum_tele extends OpMode { //make sure that you remember 
 
         if (gamepad2.a == true) {//as long as the a button is pressed...
             cold = speed;
+
             colu = speed;
             //spin the collector motors
         }
