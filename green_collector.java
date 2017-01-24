@@ -1,11 +1,15 @@
 package org.firstinspires.ftc.teamcode;
 
+import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.hardware.DcMotor;
 
 /**
  * Created by Noelle on 11/19/2015.
  */
+
+@Disabled //prevents this code from giving errors when putting onto phone
+
 public class green_collector extends OpMode {
 
     final static double SPEED = 0; //this must be between -1 and 1!
@@ -16,10 +20,6 @@ public class green_collector extends OpMode {
     public void init() {
         collectRight = hardwareMap.dcMotor.get("collect left");
         collectLeft = hardwareMap.dcMotor.get("collect right"); //don't forget the semicolon(;)!
-        ShooterLeft = hardwareMap.dcMotor.get("shoot left");
-        ShooterRight = hardwareMap.dcMotor.get("shoot right");
-
-        ShooterRight.setDirection(DcMotor.Direction.REVERSE);
     }
 
     public void loop() {

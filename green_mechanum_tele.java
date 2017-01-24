@@ -95,6 +95,7 @@ public class green_mechanum_tele extends OpMode { //make sure that you remember 
         if ((-0.3 < x && x< 0.3) && (y <= -0.3)) {
             //move backward
             LeftF = -speed;
+<<<<<<< HEAD
             LeftB = -speed;
             RightF = -speed;
             RightB = -speed;
@@ -106,6 +107,27 @@ public class green_mechanum_tele extends OpMode { //make sure that you remember 
             LeftF = speed;
             LeftB = -speed;
             RightF = -speed;
+=======
+            LeftB = -speed;
+            RightF = -speed;
+            RightB = -speed;
+        }
+
+        //strafe left
+        if ((x <= -0.3) && (-0.3 < y && y< 0.3)) {
+            //move left
+            LeftF = -speed;
+            LeftB = speed;
+            RightF = speed;
+            RightB = -speed;
+        }
+        //strafe right
+        if ((x >= 0.3) && (-0.3 < y && y < 0.3)) {
+            //move right
+            LeftF = speed;
+            LeftB = -speed;
+            RightF = -speed;
+>>>>>>> 64de4dee387187d28d889be0f5e1e9a380040880
             RightB = speed;
         }
         //strafe right
@@ -139,12 +161,67 @@ public class green_mechanum_tele extends OpMode { //make sure that you remember 
 
         }
 
+        //brakes
+        if ((-0.3 < x && x < 0.3) && (-0.3 < y && y < 0.3)) {
+            //stop
+            LeftF = STOP;
+            LeftB = STOP;
+            RightF = STOP;
+            RightB = STOP;
+        }
+
+        //NE
+        if( x> 0.3 && y >0){
+            LeftF = speed;
+            LeftB = STOP;
+            RightF = STOP;
+            RightB = speed;
+        }
+        //SE
+        if(x>0.3 && y<0){
+            LeftF = STOP;
+            LeftB = speed;
+            RightF = speed;
+            RightB = STOP;
+        }
+        //SW
+        if(x<-0.3 && y <0){
+            LeftF = -speed;
+            LeftB = STOP;
+            RightF = STOP;
+            RightB = -speed;
+        }
+        //NW
+        if(x<-0.3 && y>0){
+            LeftF = STOP;
+            LeftB = -speed;
+            RightF = -speed;
+            RightB = STOP;
+        }
+        //8 directions------------------------------------------------------------------------------
+        //</editor-fold>
+
+        //<editor-fold desc="old directional code. May be useful, but is commented out">
+        /*
+        //forward(top left corner)
+        if ((x < 0) && (y < 0)) {
+            LeftF = speed;
+            RightF = -speed;
+            LeftB = speed;
+            RightB = -speed;
+
+        }
+
         //left
+<<<<<<< HEAD
 <<<<<<< HEAD
         else if (x >= 0 && y>=0) {
 =======
         else if (x > 0 && y>0) {
 >>>>>>> aa13aa1c7d12be88b24e43721023dba98a2f44b5
+=======
+        else if (x > 0 && y>0) {
+>>>>>>> 64de4dee387187d28d889be0f5e1e9a380040880
             LeftF = -speed;
             RightF = -speed;
             LeftB = speed;
@@ -153,10 +230,14 @@ public class green_mechanum_tele extends OpMode { //make sure that you remember 
 
         //right
 <<<<<<< HEAD
+<<<<<<< HEAD
         else if(x<=0 && y<=0){
 =======
         else if(x<0 && y<0){
 >>>>>>> aa13aa1c7d12be88b24e43721023dba98a2f44b5
+=======
+        else if(x<0 && y<0){
+>>>>>>> 64de4dee387187d28d889be0f5e1e9a380040880
             LeftF = speed;
             RightF = speed;
             LeftB = -speed;
@@ -165,10 +246,14 @@ public class green_mechanum_tele extends OpMode { //make sure that you remember 
 
         //back
 <<<<<<< HEAD
+<<<<<<< HEAD
         else if ( x>=0 && y<=0){
 =======
         else if ( x>0 && y<0){
 >>>>>>> aa13aa1c7d12be88b24e43721023dba98a2f44b5
+=======
+        else if ( x>0 && y<0){
+>>>>>>> 64de4dee387187d28d889be0f5e1e9a380040880
             LeftF=speed;
             RightF=-speed;
             LeftB=speed;
@@ -194,19 +279,25 @@ public class green_mechanum_tele extends OpMode { //make sure that you remember 
         }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
         if (gamepad2.a == true) {//as long as the a button is pressed...
             cold = speed;
 
             colu = speed;
             //spin the collector motors
 =======
+=======
+>>>>>>> 64de4dee387187d28d889be0f5e1e9a380040880
         if (gamepad1.right_bumper) {//turn right
             LeftF = -speed;
             RightF = -speed;
             LeftB = -speed;
             RightB = -speed;
 
+<<<<<<< HEAD
 >>>>>>> aa13aa1c7d12be88b24e43721023dba98a2f44b5
+=======
+>>>>>>> 64de4dee387187d28d889be0f5e1e9a380040880
         }
         //end bumpers-------------------------------------------------------------------------------
         //</editor-fold>
@@ -221,8 +312,13 @@ public class green_mechanum_tele extends OpMode { //make sure that you remember 
         // if (gamepad2.a) {//as long as the a button is pressed...
         //colu = STOP;
         ////spin the collector motors
+<<<<<<< HEAD
 
 
+=======
+
+
+>>>>>>> 64de4dee387187d28d889be0f5e1e9a380040880
         if (gamepad2.b) {//if b is pressed...
             shoot1 = speed;
             shoot2 = -speed;
