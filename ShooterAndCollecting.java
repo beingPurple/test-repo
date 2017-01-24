@@ -1,11 +1,14 @@
 package org.firstinspires.ftc.teamcode.Code;
 
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
+import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.DcMotor;
 
 /**
  * Created by Joanna and Gemma on 1/24/17.
  */
+@TeleOp (name = "Green Shooter and Collector", group ="Green")
+
 
 public class ShooterAndCollecting extends OpMode {
     DcMotor shoot1;
@@ -31,7 +34,7 @@ public class ShooterAndCollecting extends OpMode {
     public void loop(){
 
 
-       //the code for collecting (press botton a):
+        //the code for collecting (press botton a):
         if( gamepad1.a ){
             col= speedcol;
 
