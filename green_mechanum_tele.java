@@ -97,7 +97,7 @@ public class green_mechanum_tele extends OpMode { //make sure that you remember 
         if ((-0.3 < x && x < 0.3) && (y >= 0.3)) {
             //move forward
             LeftF = speed;
-            LeftB = speed;
+            LeftB = -speed;
             RightF = speed;
             RightB = speed;
         }
@@ -106,7 +106,7 @@ public class green_mechanum_tele extends OpMode { //make sure that you remember 
         if ((-0.3 < x && x< 0.3) && (y <= -0.3)) {
             //move backward
             LeftF = -speed;
-            LeftB = -speed;
+            LeftB = speed;
             RightF = -speed;
             RightB = -speed;
         }
@@ -114,18 +114,18 @@ public class green_mechanum_tele extends OpMode { //make sure that you remember 
         //strafe left
         if ((x <= -0.3) && (-0.3 < y && y< 0.3)) {
             //move left
-            LeftF = -speed;
+            LeftF = speed;
             LeftB = speed;
-            RightF = speed;
-            RightB = -speed;
+            RightF = -speed;
+            RightB = speed;
         }
         //strafe right
         if ((x >= 0.3) && (-0.3 < y && y < 0.3)) {
             //move right
-            LeftF = speed;
+            LeftF = -speed;
             LeftB = -speed;
-            RightF = -speed;
-            RightB = speed;
+            RightF = speed;
+            RightB = -speed;
         }
 
         //brakes
